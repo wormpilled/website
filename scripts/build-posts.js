@@ -5,10 +5,10 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import * as cheerio from 'cheerio';
 
-const OBSIDIAN_VAULT_PATH = '/home/user/Obsidian/wormpilled';
-const POSTS_DIR = path.join(OBSIDIAN_VAULT_PATH, 'POSTS');
-const STANDALONE_DIR = path.join(OBSIDIAN_VAULT_PATH, 'STANDALONE');
-const UPLOADS_DIR = path.join(OBSIDIAN_VAULT_PATH, 'UPLOADS');
+const CONTENT_PATH = path.join(process.cwd(), 'content');
+const POSTS_DIR = path.join(CONTENT_PATH, 'POSTS');
+const STANDALONE_DIR = path.join(CONTENT_PATH, 'STANDALONE');
+const UPLOADS_DIR = path.join(CONTENT_PATH, 'UPLOADS');
 
 const OUTPUT_DIR = path.join(process.cwd(), 'src/lib/posts');
 const STATIC_DIR = path.join(process.cwd(), 'static');
@@ -57,7 +57,7 @@ function processDirectory(dirPath, extractHeaders = false) {
 
 	const allData = files
 		.map((file) => {
-			const relativePath = path.relative(OBSIDIAN_VAULT_PATH, file);
+			const relativePath = path.relative(CONTENT_PATH, file);
 			console.log(`- Processing: ${relativePath}`);
 			const fileContent = fs.readFileSync(file, 'utf8');
 			const { data, content } = matter(fileContent);
@@ -129,7 +129,6 @@ if (fs.existsSync(UPLOADS_DIR)) {
 	if (!fs.existsSync(staticUploadsDir)) {
 		fs.mkdirSync(staticUploadsDir, { recursive: true });
 	}
-	// Use fs.cpSync for modern Node.js, it's simpler
 	fs.cpSync(UPLOADS_DIR, staticUploadsDir, { recursive: true, force: true });
 	console.log('Uploads copied successfully.');
 } else {
