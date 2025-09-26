@@ -29,11 +29,6 @@ so we can use this as a media/uplods folder on github to serve the graphics on g
 
 ```
 wormpilled.github.io
-```
-
-@/home/user/Obsidian/wormpilled/Features - CloudFlare Workers.md
-@/home/user/Obsidian/wormpilled/Features - Implementation Tiers.md
-@/home/user/Obsidian/wormpilled/Features - Details.md
-
+``` 
 # code
 
