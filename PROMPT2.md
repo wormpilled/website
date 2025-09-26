@@ -67,7 +67,7 @@ wormpilled.github.io
 @/var/www/html/wormpilled/src/app.d.ts
 @/var/www/html/wormpilled/package.json
 @/var/www/html/wormpilled/deploy.sh
-
+@/var/www/html/wormpilled/scripts/build-posts.js
 
 we are going to implement this functionality, i will have to create all new CloudFlare Workers through the dashboard (i do not want to use wrangler CLI)
 you will have to explain the process when i need to create new KV stores for example, to setup these CloudFlare Workers Integrations

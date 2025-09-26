@@ -1,3 +1,4 @@
+// /var/www/html/wormpilled/scripts/build-posts.js
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -26,14 +27,19 @@ function getSlug(text) {
 
 function getMarkdownFiles(dir) {
 	let files = [];
-	const items = fs.readdirSync(dir);
-	for (const item of items) {
-		const fullPath = path.join(dir, item);
-		if (fs.statSync(fullPath).isDirectory()) {
-			files = files.concat(getMarkdownFiles(fullPath));
-		} else if (path.extname(item) === '.md') {
-			files.push(fullPath);
+	try {
+		const items = fs.readdirSync(dir);
+		for (const item of items) {
+			const fullPath = path.join(dir, item);
+			if (fs.statSync(fullPath).isDirectory()) {
+				files = files.concat(getMarkdownFiles(fullPath));
+			} else if (path.extname(item) === '.md') {
+				files.push(fullPath);
+			}
 		}
+	} catch (error) {
+		console.warn(`\nWarning: Could not read directory ${dir}. It might not exist. Skipping.`);
+		return [];
 	}
 	return files;
 }
@@ -45,7 +51,9 @@ function processDirectory(dirPath, extractHeaders = false) {
 	}
 
 	const files = getMarkdownFiles(dirPath);
-	console.log(`\nFound ${files.length} files in ${path.basename(dirPath)}...`);
+	if (files.length > 0) {
+		console.log(`\nFound ${files.length} files in ${path.basename(dirPath)}...`);
+	}
 
 	const allData = files
 		.map((file) => {
@@ -58,8 +66,9 @@ function processDirectory(dirPath, extractHeaders = false) {
 				console.log(`  ... SKIPPING DRAFT.`);
 				return null;
 			}
-
-			const slug = getSlug(path.relative(dirPath, file).replace(/\.md$/, ''));
+			
+			const slugBase = path.relative(dirPath, file).replace(/\.md$/, '');
+			const slug = getSlug(slugBase);
 
 			const processedContent = content.replace(/!\[\[UPLOADS\/(.*?)]]/g, (match, imageName) => {
 				const encodedImageName = imageName.replace(/\s/g, '%20');
@@ -72,21 +81,21 @@ function processDirectory(dirPath, extractHeaders = false) {
 			if (extractHeaders) {
 				const $ = cheerio.load(htmlContent);
 				const headerElements = $('h1, h2, h3');
-				console.log(`  ... found ${headerElements.length} headers in "${relativePath}"`);
-
-				headerElements.each(function () {
-					const element = $(this);
-					const text = element.text();
-					const id = getSlug(text);
-					element.attr('id', id);
-					headers.push({
-						level: parseInt(this.tagName.substring(1)),
-						text,
-						id
+				
+				if (headerElements.length > 0) {
+					headerElements.each(function () {
+						const element = $(this);
+						const text = element.text();
+						const id = getSlug(text);
+						element.attr('id', id);
+						headers.push({
+							level: parseInt(this.tagName.substring(1)),
+							text,
+							id
+						});
 					});
-				});
-				htmlContent = $('body').html();
-				console.log(`  ... extracted headers: ${JSON.stringify(headers.map(h => h.text))}`);
+					htmlContent = $('body').html();
+				}
 			}
 
 			return {
@@ -98,9 +107,13 @@ function processDirectory(dirPath, extractHeaders = false) {
 		})
 		.filter(Boolean);
 
-	allData.sort((a, b) => new Date(b.date) - new Date(a.date));
+	if (allData.length > 0) {
+		allData.sort((a, b) => new Date(b.date) - new Date(a.date));
+	}
 	return allData;
 }
+
+console.log('Starting content build process...');
 
 const postsData = processDirectory(POSTS_DIR, false);
 fs.writeFileSync(path.join(OUTPUT_DIR, 'posts.json'), JSON.stringify(postsData, null, 2));
@@ -111,12 +124,16 @@ fs.writeFileSync(path.join(OUTPUT_DIR, 'standalone.json'), JSON.stringify(standa
 console.log(`Processed ${standaloneData.length} total standalone pages.`);
 
 if (fs.existsSync(UPLOADS_DIR)) {
-	console.log(`\nCopying uploads from ${UPLOADS_DIR} to ${STATIC_DIR}...`);
-	if (!fs.existsSync(STATIC_DIR)) {
-		fs.mkdirSync(STATIC_DIR, { recursive: true });
+	const staticUploadsDir = path.join(STATIC_DIR, 'UPLOADS');
+	console.log(`\nCopying uploads from ${UPLOADS_DIR} to ${staticUploadsDir}...`);
+	if (!fs.existsSync(staticUploadsDir)) {
+		fs.mkdirSync(staticUploadsDir, { recursive: true });
 	}
-	fs.cpSync(UPLOADS_DIR, STATIC_DIR, { recursive: true });
+	// Use fs.cpSync for modern Node.js, it's simpler
+	fs.cpSync(UPLOADS_DIR, staticUploadsDir, { recursive: true, force: true });
 	console.log('Uploads copied successfully.');
 } else {
 	console.warn(`\nUploads directory not found: ${UPLOADS_DIR}. Skipping copy.`);
 }
+
+console.log('\nContent build process finished.');
