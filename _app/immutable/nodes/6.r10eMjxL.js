@@ -1,6 +1,0 @@
-import{S as p,i as u,s as P,n as i,d as c,a as E,b as r,c as l,h as _,e as m,f,g as C,j as d,k as B}from"../chunks/DsT8NKOW.js";import"../chunks/IHki7fMi.js";function L(h){let e,s,t,o=`<h1>// PGP Public Key</h1> <p>For secure communication, use the public key below.</p> <pre class="svelte-1rcbeo4">-----BEGIN PGP PUBLIC KEY BLOCK-----
-
-mQINBF+3aVsBEAD...[REDACTED]...
-...
------END PGP PUBLIC KEY BLOCK-----
-	</pre> <a href="/">&lt;-- Index</a>`;return{c(){e=d("meta"),s=B(),t=d("article"),t.innerHTML=o,this.h()},l(a){const n=_("svelte-1if6dio",document.head);e=m(n,"META",{name:!0,content:!0}),n.forEach(c),s=f(a),t=m(a,"ARTICLE",{"data-svelte-h":!0}),C(t)!=="svelte-x26kmi"&&(t.innerHTML=o),this.h()},h(){document.title="PGP KEY",l(e,"name","description"),l(e,"content","Public encryption key")},m(a,n){E(document.head,e),r(a,s,n),r(a,t,n)},p:i,i,o:i,d(a){a&&(c(s),c(t)),c(e)}}}class x extends p{constructor(e){super(),u(this,e,null,L,P,{})}}export{x as component};
