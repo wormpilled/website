@@ -4,4 +4,4 @@ const e=[{title:"New Vault Setup",description:"Starter note with example images 
 <p><img src="/phone.jpg" alt="phone.jpg"></p>
 <p>another picture:
 <img src="/troll.png" alt="troll.png"></p>
-`}];export{e as p};
+`,headers:[]}];export{e as p};
