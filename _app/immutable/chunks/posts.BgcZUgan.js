@@ -1,4 +1,4 @@
-const e=[{slug:"new-vault-setup-(obsidian-blogging-cms)",htmlContent:`<p>This is your new <em>vault</em>. yes! you love to see it!</p>
+const e=[{slug:"new-vault-setup-(obsidian-blogging-cms)",htmlContent:`<p>This is your new <em>vault</em>. yes! you love to see it! Test!</p>
 <p>Make a note of something, [[create a link]], or try <a href="https://help.obsidian.md/Plugins/Importer">the Importer</a>!</p>
 <p>When you&#39;re ready, delete this note and make the vault your own.</p>
 <p><img src="/UPLOADS/phone.jpg" alt=""></p>
