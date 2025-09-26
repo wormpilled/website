@@ -1,0 +1,52 @@
+// WORM::PILLED - DEVELOPMENT ROADMAP
+
+[TIER 1 - CORE & STATIC]
+- [X] Uptime Counter
+- [X] System Load (Static)
+- [X] Hexadecimal Clock
+- [X] Biometric Status (Static)
+- [X] Connection Status (Static)
+- [X] Geographic Sector (Static)
+- [X] Session Log (Static)
+- [X] Webring Links (Static)
+- [X] Guestbook/Contact Link
+- [X] Tor Onion Address (Static)
+- [X] Finger Protocol Plan File
+- [X] Keybase/PGP Identity Page
+- [X] Fediverse Handle
+- [X] Encrypted Channel (Static)
+- [X] Gemini Protocol Mirror (Link)
+- [X] Public Comms Relay (Static list)
+- [X] Neocities Profile (Link)
+- [X] Known Aliases (Static)
+- [X] A Shrine (Static)
+- [X] Days Since Last Incident Counter
+- [X] Dotfiles Link
+- [X] Anti-Cookie Banner
+- [X] No-JS Compatibility Badge
+- [X] /humans.txt file
+- [X] A/V Test Page
+
+[TIER 2 - BUILD-TIME ENHANCEMENT]
+- [ ] Now Playing (via JSON)
+- [ ] Current Hardware/Software (Standalone Pages System)
+- [ ] Last Modified Timestamp
+- [ ] Active Focus (via .txt)
+- [ ] Cognitive State (via .txt)
+- [ ] Energy Levels (via .txt)
+- [ ] Blogroll / Allies (via JSON)
+- [ ] 88x31 Buttons (via JSON)
+- [ ] Prominent RSS Feed Link (Feed Generation)
+- [ ] Trusted Intel (via JSON)
+- [ ] Manifesto Link (Standalone Page)
+- [ ] A Colophon (Standalone Page)
+- [ ] Quote Block (Random from JSON)
+- [ ] Warrant Canary (Standalone Page)
+- [ ] Theme Switcher
+- [ ] Content License (Standalone Page)
+- [ ] /etc/motd (Standalone Page)
+
+[TIER 3 - DYNAMIC & INTEGRATED]
+- [ ] Visitor Counter (Serverless Function)
+- [ ] Dystopian Weather (API Call at Build)
+- [ ] Site Integrity Hash (Post-build script)

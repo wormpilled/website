@@ -1,0 +1,44 @@
+[
+	{
+		"title": "//SHRINE: DFW",
+		"art": [
+			"    /|",
+			"   / |",
+			"  /  |",
+			" /___|",
+			"(____|",
+			"|____)",
+			"|____|",
+			"|____|",
+			" (LI)"
+		],
+		"url": "https://en.wikipedia.org/wiki/David_Foster_Wallace",
+		"linkText": "In Memoriam"
+	},
+	{
+		"title": "//SHRINE: T.P.",
+		"art": [
+			"    /\\__",
+			"   / / / /\\",
+			"  / / / /  \\",
+			" | | | |   |",
+			" | | | |   |",
+			"  \\______/"
+		],
+		"url": "https://en.wikipedia.org/wiki/Thomas_Pynchon",
+		"linkText": "Entropy"
+	},
+	{
+		"title": "//SHRINE: BOOT",
+		"art": [
+			"  _______",
+			" | _____ |",
+			" | |   | |",
+			" | |___| |",
+			" |_______|",
+			"(________/)"
+		],
+		"url": "https://en.wikipedia.org/wiki/Power-on_self-test",
+		"linkText": "POST"
+	}
+]

@@ -2,102 +2,121 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import * as cheerio from 'cheerio';
 
-// --- Configuration ---
-const POSTS_DIR = '/home/user/Obsidian/wormpilled/POSTS';
-const UPLOADS_DIR = '/home/user/Obsidian/wormpilled/UPLOADS';
-const OUTPUT_JSON_DIR = path.resolve(process.cwd(), 'src/lib/posts');
-const STATIC_UPLOADS_DIR = path.resolve(process.cwd(), 'static/UPLOADS');
+const OBSIDIAN_VAULT_PATH = '/home/user/Obsidian/wormpilled';
+const POSTS_DIR = path.join(OBSIDIAN_VAULT_PATH, 'POSTS');
+const STANDALONE_DIR = path.join(OBSIDIAN_VAULT_PATH, 'STANDALONE');
+const UPLOADS_DIR = path.join(OBSIDIAN_VAULT_PATH, 'UPLOADS');
 
-// --- Helper Functions ---
+const OUTPUT_DIR = path.join(process.cwd(), 'src/lib/posts');
+const STATIC_DIR = path.join(process.cwd(), 'static');
 
-function findMarkdownFiles(dir) {
-	let markdownFiles = [];
-	if (!fs.existsSync(dir)) {
-		console.warn(`Content directory not found: ${dir}. Skipping post generation.`);
-		return markdownFiles;
-	}
-	const files = fs.readdirSync(dir);
-	for (const file of files) {
-		const filePath = path.join(dir, file);
-		const stat = fs.statSync(filePath);
-		if (stat.isDirectory()) {
-			markdownFiles = markdownFiles.concat(findMarkdownFiles(filePath));
-		} else if (path.extname(file) === '.md') {
-			markdownFiles.push(filePath);
+if (!fs.existsSync(OUTPUT_DIR)) {
+	fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+}
+
+function getSlug(text) {
+	return text
+		.toLowerCase()
+		.replace(/[^a-z0-9\s-]/g, '')
+		.trim()
+		.replace(/\s+/g, '-');
+}
+
+function getMarkdownFiles(dir) {
+	let files = [];
+	const items = fs.readdirSync(dir);
+	for (const item of items) {
+		const fullPath = path.join(dir, item);
+		if (fs.statSync(fullPath).isDirectory()) {
+			files = files.concat(getMarkdownFiles(fullPath));
+		} else if (path.extname(item) === '.md') {
+			files.push(fullPath);
 		}
 	}
-	return markdownFiles;
+	return files;
 }
 
-function ensureDirectoryExists(dirPath) {
+function processDirectory(dirPath, extractHeaders = false) {
 	if (!fs.existsSync(dirPath)) {
-		fs.mkdirSync(dirPath, { recursive: true });
+		console.warn(`Directory not found: ${dirPath}. Skipping.`);
+		return [];
 	}
+
+	const files = getMarkdownFiles(dirPath);
+	console.log(`\nFound ${files.length} files in ${path.basename(dirPath)}...`);
+
+	const allData = files
+		.map((file) => {
+			const relativePath = path.relative(OBSIDIAN_VAULT_PATH, file);
+			console.log(`- Processing: ${relativePath}`);
+			const fileContent = fs.readFileSync(file, 'utf8');
+			const { data, content } = matter(fileContent);
+
+			if (data.draft) {
+				console.log(`  ... SKIPPING DRAFT.`);
+				return null;
+			}
+
+			const slug = getSlug(path.relative(dirPath, file).replace(/\.md$/, ''));
+
+			const processedContent = content.replace(/!\[\[UPLOADS\/(.*?)]]/g, (match, imageName) => {
+				const encodedImageName = imageName.replace(/\s/g, '%20');
+				return `![${imageName}](/${encodedImageName})`;
+			});
+
+			let htmlContent = marked.parse(processedContent);
+			let headers = [];
+
+			if (extractHeaders) {
+				const $ = cheerio.load(htmlContent);
+				const headerElements = $('h1, h2, h3');
+				console.log(`  ... found ${headerElements.length} headers in "${relativePath}"`);
+
+				headerElements.each(function () {
+					const element = $(this);
+					const text = element.text();
+					const id = getSlug(text);
+					element.attr('id', id);
+					headers.push({
+						level: parseInt(this.tagName.substring(1)),
+						text,
+						id
+					});
+				});
+				htmlContent = $('body').html();
+				console.log(`  ... extracted headers: ${JSON.stringify(headers.map(h => h.text))}`);
+			}
+
+			return {
+				...data,
+				slug,
+				htmlContent,
+				headers
+			};
+		})
+		.filter(Boolean);
+
+	allData.sort((a, b) => new Date(b.date) - new Date(a.date));
+	return allData;
 }
 
-// --- Main Execution ---
+const postsData = processDirectory(POSTS_DIR, false);
+fs.writeFileSync(path.join(OUTPUT_DIR, 'posts.json'), JSON.stringify(postsData, null, 2));
+console.log(`\nProcessed ${postsData.length} total posts.`);
 
-console.log('--- Starting Content Build ---');
+const standaloneData = processDirectory(STANDALONE_DIR, true);
+fs.writeFileSync(path.join(OUTPUT_DIR, 'standalone.json'), JSON.stringify(standaloneData, null, 2));
+console.log(`Processed ${standaloneData.length} total standalone pages.`);
 
-// 1. Ensure output directories exist
-ensureDirectoryExists(OUTPUT_JSON_DIR);
-ensureDirectoryExists(STATIC_UPLOADS_DIR);
-
-// 2. Copy asset files
 if (fs.existsSync(UPLOADS_DIR)) {
-	const assets = fs.readdirSync(UPLOADS_DIR);
-	console.log(`Found ${assets.length} assets in ${UPLOADS_DIR}. Syncing to static folder...`);
-	assets.forEach(file => {
-		const srcFile = path.join(UPLOADS_DIR, file);
-		const destFile = path.join(STATIC_UPLOADS_DIR, file);
-		fs.copyFileSync(srcFile, destFile);
-	});
-} else {
-	console.warn(`[Assets] Uploads directory not found: ${UPLOADS_DIR}. No assets copied.`);
-}
-
-// 3. Process Markdown posts
-const allPosts = [];
-const markdownFiles = findMarkdownFiles(POSTS_DIR);
-console.log(`[Posts] Found ${markdownFiles.length} markdown files to process...`);
-
-for (const filePath of markdownFiles) {
-	console.log(` -> Processing: ${path.basename(filePath)}`);
-	const fileContent = fs.readFileSync(filePath, 'utf8');
-	const { data, content } = matter(fileContent);
-
-	// A post is a draft ONLY if 'draft: true' is in the frontmatter.
-	// If 'draft' is false, undefined, or null, the post will be published.
-	if (data.draft === true) {
-		console.log(`    - SKIPPING: Post is marked as a draft.`);
-		continue;
+	console.log(`\nCopying uploads from ${UPLOADS_DIR} to ${STATIC_DIR}...`);
+	if (!fs.existsSync(STATIC_DIR)) {
+		fs.mkdirSync(STATIC_DIR, { recursive: true });
 	}
-
-	const processedContent = content.replace(/!\[\[(UPLOADS\/.*?)\]\]/g, '![](/$1)');
-	const htmlContent = marked(processedContent);
-	const slug = path.basename(filePath, '.md').toLowerCase().replace(/\s+/g, '-');
-
-	allPosts.push({
-		slug,
-		htmlContent,
-		...data,
-	});
-}
-
-// 4. Sort posts by date (newest first)
-allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-// 5. Write the final JSON output
-fs.writeFileSync(
-	path.join(OUTPUT_JSON_DIR, 'posts.json'),
-	JSON.stringify(allPosts, null, 2)
-);
-
-if (allPosts.length === 0) {
-	console.warn('[Posts] No publishable posts were found. Wrote an empty posts.json.');
+	fs.cpSync(UPLOADS_DIR, STATIC_DIR, { recursive: true });
+	console.log('Uploads copied successfully.');
 } else {
-	console.log(`[Posts] Successfully processed and wrote ${allPosts.length} posts to src/lib/posts/posts.json.`);
+	console.warn(`\nUploads directory not found: ${UPLOADS_DIR}. Skipping copy.`);
 }
-
-console.log('--- Content Build Finished ---');

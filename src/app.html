@@ -1,28 +1,50 @@
+<!-- /var/www/html/wormpilled/src/app.html -->
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			// IIFE to avoid polluting global scope
+			(function () {
+				try {
+					var theme = localStorage.getItem('theme');
+					// We default to 'wormpilled' if no theme is set
+					document.documentElement.setAttribute('data-theme', theme || 'wormpilled');
+				} catch (e) {
+					// localStorage is not available, default theme will be applied via CSS
+				}
+			})();
+		</script>
 		<style>
 			:root {
+				/* Default theme (wormpilled) as fallback */
 				--background: #1a1a1a;
 				--foreground: #f0f0f0;
-				--accent: #00ff00;
+				--accent: #00dd00; /* Desaturated Green */
 				--border: #444;
 				font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
 			}
+
+			[data-theme='wormpilled'] {
+				--background: #1a1a1a;
+				--foreground: #f0f0f0;
+				--accent: #00dd00;
+				--border: #444;
+			}
+
+			[data-theme='maddi'] {
+				--background: #2d2a41;
+				--foreground: #f0f0f0;
+				--accent: #ff79c6;
+				--border: #6272a4;
+			}
+
 			body {
 				background-color: var(--background);
 				color: var(--foreground);
 				margin: 0;
-				padding: 1rem;
-				display: flex;
-				justify-content: center;
 				line-height: 1.6;
-			}
-			main {
-				max-width: 70ch;
-				width: 100%;
 			}
 			a {
 				color: var(--accent);
@@ -34,17 +56,42 @@
 				background-color: var(--accent);
 				color: var(--background);
 			}
-			h1, h2, h3, h4, h5, h6 {
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
 				color: var(--foreground);
 				border-bottom: 1px solid var(--border);
 				padding-bottom: 0.3em;
+				margin: 1.5rem 0 1rem 0;
+			}
+			h1 {
+				font-size: 2rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+			h3 {
+				font-size: 1.17rem;
+			}
+			h4 {
+				font-size: 1rem;
+			}
+			h5 {
+				font-size: 0.83rem;
+			}
+			h6 {
+				font-size: 0.67rem;
 			}
 			img {
 				max-width: 100%;
 				height: auto;
 				border: 1px solid var(--border);
 			}
-			pre, code {
+			pre,
+			code {
 				font-family: inherit;
 				background-color: #2b2b2b;
 				padding: 0.1em 0.3em;
@@ -53,15 +100,13 @@
 			pre {
 				padding: 1em;
 				overflow-x: auto;
+				white-space: pre-wrap;
+				word-break: break-all;
 			}
 		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-			<main>
-				%sveltekit.body%
-			</main>
-		</div>
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

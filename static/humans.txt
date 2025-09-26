@@ -1,0 +1,10 @@
+/* TEAM */
+	Developer: Carrot
+	Contact: carrot@example.com
+	From: Megacity Prime, Sector 404
+
+/* SITE */
+	Last update: 2025-09-26
+	Standards: HTML5, CSS3
+	Components: SvelteKit
+	Software: VSCode, nvim
