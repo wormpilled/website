@@ -1,0 +1,63 @@
+{
+  "misc-its-joey": {
+    "prev": {
+      "slug": "/posts",
+      "title": "Back to All Transmissions"
+    },
+    "next": {
+      "slug": "misc-niggas-in-space"
+    }
+  },
+  "misc-niggas-in-space": {
+    "prev": {
+      "slug": "misc-its-joey",
+      "title": "its joey time"
+    },
+    "next": {
+      "slug": "technology-new-vault-setup-obsidian-blogging-cms",
+      "title": "New Vault Setup"
+    }
+  },
+  "technology-new-vault-setup-obsidian-blogging-cms": {
+    "prev": {
+      "slug": "misc-niggas-in-space"
+    },
+    "next": {
+      "slug": "technology-untitled-1"
+    }
+  },
+  "technology-untitled-1": {
+    "prev": {
+      "slug": "technology-new-vault-setup-obsidian-blogging-cms",
+      "title": "New Vault Setup"
+    },
+    "next": {
+      "slug": "technology-untitled"
+    }
+  },
+  "technology-untitled": {
+    "prev": {
+      "slug": "technology-untitled-1"
+    },
+    "next": {
+      "slug": "technology-gallery-dl"
+    }
+  },
+  "technology-gallery-dl": {
+    "prev": {
+      "slug": "technology-untitled"
+    },
+    "next": {
+      "slug": "technology-what-is-hn-working-on"
+    }
+  },
+  "technology-what-is-hn-working-on": {
+    "prev": {
+      "slug": "technology-gallery-dl"
+    },
+    "next": {
+      "slug": "/standalone",
+      "title": "View Standalone Pages"
+    }
+  }
+}

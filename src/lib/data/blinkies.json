@@ -1,0 +1,82 @@
+[
+	{
+		"src": "/assets/decorative/computer.gif",
+		"alt": "A pixelated computer with a green screen",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/laptop_kitty.gif",
+		"alt": "A cat typing on a laptop",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/hamster1.gif",
+		"alt": "A dancing hamster",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/mushroom.gif",
+		"alt": "A flashing mushroom animation",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/ANIMERTH.gif",
+		"alt": "ANIMERTH",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/Turtle-01.gif",
+		"alt": "Turtle",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/mail.gif",
+		"alt": "Email me",
+		"url": "mailto:carrot@example.com"
+	},
+	{
+		"src": "/assets/decorative/horse.gif",
+		"alt": "Running horse",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/dance12.gif",
+		"alt": "Dancing person",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/lizard.gif",
+		"alt": "Lizard",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/sweating.gif",
+		"alt": "Sweating smiley",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/hamster2.gif",
+		"alt": "Another dancing hamster",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/lips.gif",
+		"alt": "Lips",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/dancingbear1.gif",
+		"alt": "Dancing bear",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/pet_window.gif",
+		"alt": "Pet in a window",
+		"url": null
+	},
+	{
+		"src": "/assets/decorative/spin_smile.gif",
+		"alt": "Spinning smiley face",
+		"url": null
+	}
+]

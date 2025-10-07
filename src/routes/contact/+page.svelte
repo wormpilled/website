@@ -1,3 +1,4 @@
+<!-- /var/www/html/wormpilled/src/routes/contact/+page.svelte -->
 <svelte:head>
 	<title>CONTACT</title>
 	<meta name="description" content="Contact and Guestbook" />

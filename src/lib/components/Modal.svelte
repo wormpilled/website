@@ -6,8 +6,24 @@
 
 	export let show = false;
 
+	// When the `show` prop changes, update the body's scroll behavior.
+	$: if (browser) {
+		if (show) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = ''; // Reverts to the stylesheet's value
+		}
+	}
+
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
+			show = false;
+		}
+	}
+
+	function handleBackdropClick(event: MouseEvent) {
+		// Close modal only if the click is on the backdrop itself, not a child element.
+		if (event.currentTarget === event.target) {
 			show = false;
 		}
 	}
@@ -21,24 +37,26 @@
 	onDestroy(() => {
 		if (browser) {
 			window.removeEventListener('keydown', handleKeydown);
+			// Important: Reset the overflow style when the component is destroyed,
+			// in case it's destroyed while the modal is still open (e.g., page navigation).
+			document.body.style.overflow = '';
 		}
 	});
 </script>
 
 {#if show}
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		class="modal-backdrop"
 		role="button"
 		tabindex="0"
-		on:click={() => (show = false)}
+		on:click={handleBackdropClick}
 		on:keydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') show = false;
+			if (e.key === 'Enter' || e.key === ' ') handleBackdropClick(e);
 		}}
 		transition:fade={{ duration: 150 }}
 	>
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div role="dialog" aria-modal="true" class="modal-content" on:click|stopPropagation>
+		<div role="dialog" aria-modal="true" class="modal-content">
 			<button class="close-button" on:click={() => (show = false)}>[X]</button>
 			<slot />
 		</div>

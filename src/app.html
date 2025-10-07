@@ -8,9 +8,20 @@
 			// IIFE to avoid polluting global scope
 			(function () {
 				try {
+					// Theme loader
 					var theme = localStorage.getItem('theme');
-					// We default to 'wormpilled' if no theme is set
 					document.documentElement.setAttribute('data-theme', theme || 'wormpilled');
+
+					// Cursor loader
+					var cursor = localStorage.getItem('cursor_preference');
+					if (cursor !== 'default') {
+						document.documentElement.classList.add('custom-cursor');
+					}
+
+					// Prevent header flash on initial anchor link load
+					if (window.location.hash) {
+						document.documentElement.classList.add('js-loading-anchor');
+					}
 				} catch (e) {
 					// localStorage is not available, default theme will be applied via CSS
 				}
@@ -20,32 +31,67 @@
 			:root {
 				/* Default theme (wormpilled) as fallback */
 				--background: #1a1a1a;
+				--background-alt: rgba(0, 0, 0, 1);
+				--background-scrolled: #444444;
 				--foreground: #f0f0f0;
 				--accent: #00dd00; /* Desaturated Green */
+				--accent-visited: #009a00;
 				--border: #444;
+				--pre-background: #2b2b2b;
+				--header-height: 140px;
 				font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+				cursor: initial; /* Use browser default cursor */
+			}
+
+			/* Hide the main header during initial load if a hash is present */
+			:root.js-loading-anchor #main-header {
+				display: none;
+			}
+
+			:root.custom-cursor {
+				cursor: url('/assets/arrow10.gif'), auto;
 			}
 
 			[data-theme='wormpilled'] {
 				--background: #1a1a1a;
+				--background-alt: #1a1a1a;
+				--background-scrolled: #353535;
 				--foreground: #f0f0f0;
 				--accent: #00dd00;
+				--accent-visited: #009a00;
 				--border: #444;
+				--pre-background: #444444;
 			}
 
 			[data-theme='maddi'] {
 				--background: #2d2a41;
+				--background-alt: #2d2a41;
+				--background-scrolled: #44475a;
 				--foreground: #f0f0f0;
 				--accent: #ff79c6;
+				--accent-visited: #bd5692;
 				--border: #6272a4;
+				--pre-background: #44475a;
 			}
 
 			body {
-				background-color: var(--background);
+				/* The scrolled color is the base, so it's what flashes on load */
+				background-color: var(--background-scrolled);
 				color: var(--foreground);
 				margin: 0;
-				line-height: 1.6;
+				line-height: 1.5;
 			}
+
+			a,
+			button {
+				cursor: inherit; /* Inherit from the root element */
+			}
+
+			.custom-cursor a,
+			.custom-cursor button {
+				cursor: url('/assets/arrow10.gif'), pointer;
+			}
+
 			a {
 				color: var(--accent);
 				text-decoration: none;
@@ -56,6 +102,10 @@
 				background-color: var(--accent);
 				color: var(--background);
 			}
+			a:visited {
+				color: var(--accent-visited);
+			}
+
 			h1,
 			h2,
 			h3,
@@ -64,36 +114,28 @@
 			h6 {
 				color: var(--foreground);
 				border-bottom: 1px solid var(--border);
-				padding-bottom: 0.3em;
-				margin: 1.5rem 0 1rem 0;
+				padding-bottom: 0.2em;
+				margin: 1rem 0 0.8rem 0;
 			}
 			h1 {
-				font-size: 2rem;
+				font-size: 1.8rem;
 			}
 			h2 {
-				font-size: 1.5rem;
+				font-size: 1.4rem;
 			}
 			h3 {
-				font-size: 1.17rem;
-			}
-			h4 {
-				font-size: 1rem;
-			}
-			h5 {
-				font-size: 0.83rem;
-			}
-			h6 {
-				font-size: 0.67rem;
+				font-size: 1.1rem;
 			}
 			img {
 				max-width: 100%;
 				height: auto;
 				border: 1px solid var(--border);
+				image-rendering: pixelated; /* Preserve pixel art style */
 			}
 			pre,
 			code {
 				font-family: inherit;
-				background-color: #2b2b2b;
+				background-color: var(--pre-background);
 				padding: 0.1em 0.3em;
 				border-radius: 4px;
 			}
@@ -102,6 +144,21 @@
 				overflow-x: auto;
 				white-space: pre-wrap;
 				word-break: break-all;
+			}
+			button {
+				background-color: transparent;
+				border: 1px solid var(--border);
+				color: var(--accent);
+				padding: 0.2em 0.5em;
+				font-family: inherit;
+				font-size: inherit;
+				font-weight: bold;
+			}
+			button:hover,
+			button:focus {
+				background-color: var(--accent);
+				color: var(--background);
+				outline: 1px solid var(--accent);
 			}
 		</style>
 		%sveltekit.head%

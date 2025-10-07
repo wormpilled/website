@@ -1,0 +1,57 @@
+{
+  "obsidian": {
+    "name": "obsidian",
+    "content": [
+      {
+        "title": "its joey time",
+        "slug": "misc-its-joey",
+        "path": "/post/misc-its-joey",
+        "date": "2025-09-25T00:00:00.000Z",
+        "description": "Starter note with example images and links in Obsidian.",
+        "type": "post"
+      },
+      {
+        "title": "New Vault Setup",
+        "slug": "technology-new-vault-setup-obsidian-blogging-cms",
+        "path": "/post/technology-new-vault-setup-obsidian-blogging-cms",
+        "date": "2025-09-25T00:00:00.000Z",
+        "description": "Starter note with example images and links in Obsidian.",
+        "type": "post"
+      }
+    ]
+  },
+  "fun": {
+    "name": "fun",
+    "content": [
+      {
+        "title": "its joey time",
+        "slug": "misc-its-joey",
+        "path": "/post/misc-its-joey",
+        "date": "2025-09-25T00:00:00.000Z",
+        "description": "Starter note with example images and links in Obsidian.",
+        "type": "post"
+      },
+      {
+        "title": "New Vault Setup",
+        "slug": "technology-new-vault-setup-obsidian-blogging-cms",
+        "path": "/post/technology-new-vault-setup-obsidian-blogging-cms",
+        "date": "2025-09-25T00:00:00.000Z",
+        "description": "Starter note with example images and links in Obsidian.",
+        "type": "post"
+      }
+    ]
+  },
+  "example": {
+    "name": "example",
+    "content": [
+      {
+        "title": "Header 1",
+        "slug": "example-standalone-page",
+        "path": "/standalone/example-standalone-page",
+        "date": "2025-09-25T00:00:00.000Z",
+        "description": "This is a page that isn't categorized like the normal blog posts, its a lengthy or detailed post that should be referred/referenced to in the future and has frequent updates.",
+        "type": "standalone"
+      }
+    ]
+  }
+}

@@ -1,14 +1,14 @@
 [
 	{
 		"name": "Cyberdyne Systems",
-		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'><text x='50' y='15' font-family='monospace' font-size='12' fill='var(--accent)' text-anchor='middle'>CYBERDYNE SYSTEMS</text></svg>"
+		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 222 20'><text x='50' y='14' font-family='monospace' font-size='12' fill='var(--accent)' text-anchor='middle'>CYBERDYNE SYSTEMS</text></svg>"
 	},
 	{
 		"name": "Weyland-Yutani Corp",
-		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'><text x='50' y='15' font-family='monospace' font-size='10' fill='var(--accent)' text-anchor='middle'>Weyland-Yutani - Building Better Worlds</text></svg>"
+		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 222 20'><text x='50' y='14' font-family='monospace' font-size='10' fill='var(--accent)' text-anchor='middle'>Weyland-Yutani - Building Better Worlds</text></svg>"
 	},
 	{
 		"name": "Umbrella Corporation",
-		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'><text x='50' y='15' font-family='monospace' font-size='12' fill='var(--accent)' text-anchor='middle'>UMBRELLA CORP.</text></svg>"
+		"svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 222 20'><text x='50' y='14' font-family='monospace' font-size='12' fill='var(--accent)' text-anchor='middle'>UMBRELLA CORP.</text></svg>"
 	}
 ]

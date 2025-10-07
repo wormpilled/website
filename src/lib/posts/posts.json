@@ -1,6 +1,6 @@
 [
   {
-    "title": "New Vault Setup",
+    "title": "its joey time",
     "description": "Starter note with example images and links in Obsidian.",
     "date": "2025-09-25T00:00:00.000Z",
     "tags": [
@@ -9,8 +9,116 @@
     ],
     "draft": false,
     "cover": null,
-    "slug": "miscellaneousnew-vault-setup-obsidian-blogging-cms",
-    "htmlContent": "<p>This is your new <em>vault</em>. yes! you love to see it! Test! Update at 7:25PM</p>\n<p>Make a note of something, [[create a link]], or try <a href=\"https://help.obsidian.md/Plugins/Importer\">the Importer</a>!</p>\n<p>When you&#39;re ready, delete this note and make the vault your own.</p>\n<p><img src=\"/phone.jpg\" alt=\"phone.jpg\"></p>\n<p>another picture:\n<img src=\"/troll.png\" alt=\"troll.png\"></p>\n",
-    "headers": []
+    "aliases": [
+      "Joey"
+    ],
+    "date created": 1759757586,
+    "date modified": 1759824772,
+    "date published": null,
+    "slug": "misc-its-joey",
+    "htmlContent": "<p>HEY GUYS ITS JOEY HERE, WADDYA SAYYY!!!!</p>\n<p>asdsad</p>\n<p>sdasd</p>\n",
+    "headers": [],
+    "author": {
+      "name": "Joey",
+      "avatar": "/assets/avatar/joey.gif",
+      "shortBio": "WADDYA SAYYY!!!!",
+      "slug": "joey"
+    }
+  },
+  {
+    "date created": 1759805194,
+    "date modified": 1759822763,
+    "slug": "misc-niggas-in-space",
+    "htmlContent": "<p><a href=\"https://niggasin.space/latest-threads\">https://niggasin.space/latest-threads</a></p>\n",
+    "headers": [],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
+  },
+  {
+    "feature": "UPLOADS/phone.jpg",
+    "thumbnail": "UPLOADS/thumbnails/resized/b622d1efd4780b6a1587a35c3f7e17c5_b89e22fb.jpg",
+    "date": "2025-09-25T00:00:00.000Z",
+    "date created": 1759757586,
+    "date modified": 1759824767,
+    "date published": null,
+    "aliases": [],
+    "tags": [
+      "obsidian",
+      "fun"
+    ],
+    "draft": false,
+    "title": "New Vault Setup",
+    "description": "Starter note with example images and links in Obsidian.",
+    "slug": "technology-new-vault-setup-obsidian-blogging-cms",
+    "htmlContent": "<p>This is your new <em>vault</em>. yes! you love to see it! Test! Update at 7:25PM</p>\n<p>Make a note of something, [[create a link]], or try <a href=\"https://help.obsidian.md/Plugins/Importer\">the Importer</a>!</p>\n<p>When you're ready, delete this note and make the vault your own.</p>\n<p><img src=\"/phone.jpg\" alt=\"phone.jpg\"></p>\n<p>another picture:</p>\n<p><img src=\"/troll.png\" alt=\"troll.png\"></p>\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>\n<h3 id=\"woaahhh\">woaahhh</h3>\n<p>0s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>\n<p>0s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>\n",
+    "headers": [
+      {
+        "level": 3,
+        "text": "woaahhh",
+        "id": "woaahhh"
+      }
+    ],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
+  },
+  {
+    "date created": 1759824017,
+    "date modified": 1759824018,
+    "slug": "technology-untitled-1",
+    "htmlContent": "",
+    "headers": [],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
+  },
+  {
+    "date created": 1759824014,
+    "date modified": 1759824015,
+    "slug": "technology-untitled",
+    "htmlContent": "",
+    "headers": [],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
+  },
+  {
+    "date created": 1759805148,
+    "date modified": 1759823427,
+    "slug": "technology-gallery-dl",
+    "htmlContent": "<p><a href=\"https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.md\">https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.md</a></p>\n",
+    "headers": [],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
+  },
+  {
+    "date created": "Monday, October 6th 2025, 7:46:51 pm",
+    "date modified": "Tuesday, October 7th 2025, 12:00:32 am",
+    "slug": "technology-what-is-hn-working-on",
+    "htmlContent": "<p><a href=\"https://news.ycombinator.com/item?id=45418675\">https://news.ycombinator.com/item?id=45418675</a></p>\n",
+    "headers": [],
+    "author": {
+      "name": "wormpilled",
+      "avatar": "/assets/avatar/wormpilled.gif",
+      "shortBio": "A local-first brutalist entity.",
+      "slug": "wormpilled"
+    }
   }
 ]

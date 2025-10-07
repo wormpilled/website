@@ -1,0 +1,212 @@
+{
+  "default": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "Tags": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "UserVitals": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "#111"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "#211f32"
+        }
+      }
+    },
+    "title": {
+      "color": "#00ff00",
+      "border-bottom": "1px dashed var(--border)"
+    },
+    "paragraph": {
+      "color": "#ccc"
+    }
+  },
+  "SystemStatus": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "GeographicSector": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "Shrine": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "#222"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "#3a3754"
+        }
+      }
+    },
+    "title": {
+      "color": "#ffff00",
+      "border-bottom": "1px solid #ffff00"
+    },
+    "paragraph": {
+      "color": "#f0f0f0"
+    }
+  },
+  "SatireBanner": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "Webring": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "Blinkies": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "var(--background)"
+        }
+      }
+    },
+    "title": {
+      "color": "var(--accent)",
+      "border-bottom": "1px solid var(--border)"
+    },
+    "paragraph": {
+      "color": "var(--foreground)"
+    }
+  },
+  "EncryptedChannel": {
+    "themes": {
+      "wormpilled": {
+        "widget": {
+          "background-color": "#000"
+        }
+      },
+      "maddi": {
+        "widget": {
+          "background-color": "#1c1b29"
+        }
+      }
+    },
+    "title": {
+      "color": "#ff5555",
+      "border-bottom": "1px solid #ff5555"
+    },
+    "paragraph": {
+      "color": "#f0f0f0"
+    }
+  }
+}

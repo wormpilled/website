@@ -1,0 +1,256 @@
+[
+  {
+    "slug": "bookmarks",
+    "title": "Bookmarks",
+    "description": "<p>A curated list of essential links and resources for web development, system administration, and online tooling.</p>\n",
+    "jsonData": {
+      "Web Development": [
+        {
+          "name": "MDN Web Docs",
+          "description": "Official documentation and learning resources for web technologies like HTML, CSS, and JavaScript.",
+          "link": "https://developer.mozilla.org/"
+        },
+        {
+          "name": "Stack Overflow",
+          "description": "Community-driven Q&A site for programming problems and solutions.",
+          "link": "https://stackoverflow.com/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "media-films",
+    "title": "Film Canon",
+    "description": "<p>A curated collection of films and series considered essential transmissions.</p>\n",
+    "jsonData": {
+      "Films & Series": [
+        {
+          "name": "Blade Runner (1982)",
+          "description": "A seminal work of science fiction, exploring themes of humanity, memory, and artificial intelligence in a rain-drenched, neon-lit future.",
+          "link": "https://www.imdb.com/title/tt0083658/"
+        },
+        {
+          "name": "Serial Experiments Lain (1998)",
+          "description": "An anime series that delves into themes of communication, identity, and technology's impact on consciousness, presaging much of modern internet culture.",
+          "link": "https://myanimelist.net/anime/339/Serial_Experiments_Lain"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "media-games",
+    "title": "Game Canon",
+    "description": "<p>A curated collection of video games considered essential transmissions.</p>\n",
+    "jsonData": {
+      "Games": [
+        {
+          "name": "Deus Ex (2000)",
+          "description": "A cyberpunk-themed action RPG lauded for its player agency, intricate level design, and branching narrative that explores conspiracy and transhumanism.",
+          "link": "https://en.wikipedia.org/wiki/Deus_Ex_(video_game)"
+        },
+        {
+          "name": "Pathologic 2 (2019)",
+          "description": "A narrative-driven survival thriller where you have 12 days to save a town consumed by a deadly plague. A game about the inevitability of failure.",
+          "link": "https://store.steampowered.com/app/505230/Pathologic_2/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "glossary",
+    "title": "Glossary",
+    "description": "<p>A personal glossary defining the specific jargon, acronyms, and neologisms used throughout this node.</p>\n",
+    "jsonData": {
+      "General": [
+        {
+          "name": "Node",
+          "description": "A single instance of this website or a person's digital garden on the distributed web.",
+          "link": null
+        },
+        {
+          "name": "Transmission",
+          "description": "A blog post or article. The act of sending a signal from this node.",
+          "link": "/posts"
+        },
+        {
+          "name": "Webring",
+          "description": "A collection of websites linked together in a circular structure, usually organized around a specific topic.",
+          "link": "https://en.wikipedia.org/wiki/Webring"
+        }
+      ],
+      "Technical": [
+        {
+          "name": "Local-First",
+          "description": "Software architecture where data is stored and managed on the user's device first, and then synced with a server. This site uses a 'local-first' authoring approach via Obsidian, but is deployed statically.",
+          "link": "https://www.inkandswitch.com/local-first/"
+        },
+        {
+          "name": "Brutalism",
+          "description": "In web design, a style characterized by raw, minimalist, and often unstyled HTML. It prioritizes function over form.",
+          "link": "https://brutalistwebsites.com/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "media-music",
+    "title": "Music Canon",
+    "description": "<p>A curated collection of music considered essential transmissions.</p>\n",
+    "jsonData": {
+      "Albums": [
+        {
+          "name": "Selected Ambient Works 85–92 - Aphex Twin",
+          "description": "A landmark album in ambient techno that combines dreamy soundscapes with intricate rhythms, defining a genre.",
+          "link": "https://en.wikipedia.org/wiki/Selected_Ambient_Works_85%E2%80%9392"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "network",
+    "title": "Network",
+    "description": "<p>A curated list of other nodes, communities, and aggregators in the distributed web worth monitoring. An expansion of the webring.</p>\n",
+    "jsonData": {
+      "Webring & Allies": [
+        {
+          "name": "Hundred Rabbits",
+          "description": "A small artist studio aboard a sailboat, creating and exploring open-source tools and games.",
+          "link": "https://100r.co"
+        },
+        {
+          "name": "Melonking",
+          "description": "The personal website and art portfolio of an indie game developer. Known for Sludge Life.",
+          "link": "https://www.melonking.net/"
+        },
+        {
+          "name": "Xandra's Zone",
+          "description": "A personal site about technology, philosophy, and creating on the internet. Focus on Go, Linux, and self-hosting.",
+          "link": "https://xandra.cc/"
+        }
+      ],
+      "Aggregators & News": [
+        {
+          "name": "Hacker News",
+          "description": "A social news website focusing on computer science and entrepreneurship.",
+          "link": "https://news.ycombinator.com/"
+        },
+        {
+          "name": "Tildes",
+          "description": "A non-profit, community-driven discussion platform.",
+          "link": "https://tildes.net/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "projects",
+    "title": "Projects",
+    "description": "<p>A showcase of personal projects, tools, and utilities developed using technologies like Bash, SvelteKit, and Linux.</p>\n",
+    "jsonData": {
+      "Software Development": [
+        {
+          "name": "Personal Blog",
+          "description": "A static site blog built with Hugo, used for sharing thoughts and tutorials.",
+          "link": "https://example.com/blog"
+        },
+        {
+          "name": "Game Modding Tool",
+          "description": "A custom utility written in Python to automate mod packaging for a favorite game.",
+          "link": "https://github.com/username/game-modding-tool"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "reading-list",
+    "title": "Reading List",
+    "description": "<p>A log of books, papers, and long-form articles that have shaped my processing in fields like cybernetics, economics, and technology.</p>\n",
+    "jsonData": {
+      "Cybernetics & Systems Theory": [
+        {
+          "name": "Cybernetics: Or Control and Communication in the Animal and the Machine",
+          "description": "The foundational text of cybernetics by Norbert Wiener, exploring feedback systems.",
+          "link": "https://en.wikipedia.org/wiki/Cybernetics:_Or_Control_and_Communication_in_the_Animal_and_the_Machine"
+        },
+        {
+          "name": "Introduction to Cybernetics",
+          "description": "A classic text by W. Ross Ashby that provides a clear, rigorous introduction to the principles of cybernetics.",
+          "link": "http://pespmc1.vub.ac.be/ASHBBOOK.html"
+        }
+      ],
+      "Economics & Politics": [
+        {
+          "name": "Debt: The First 5,000 Years",
+          "description": "An anthropological history of debt by David Graeber, challenging conventional economic narratives.",
+          "link": "https://en.wikipedia.org/wiki/Debt:_The_First_5,000_Years"
+        },
+        {
+          "name": "Seeing Like a State",
+          "description": "James C. Scott's analysis of why large-scale state projects to improve the human condition often fail.",
+          "link": "https://en.wikipedia.org/wiki/Seeing_Like_a_State"
+        }
+      ],
+      "Technology & Culture": [
+        {
+          "name": "The Cathedral and the Bazaar",
+          "description": "Eric S. Raymond's seminal essay on open-source software development methods.",
+          "link": "http://www.catb.org/~esr/writings/cathedral-bazaar/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "software",
+    "title": "Software Stack",
+    "description": "<p>A list of software, tools, and workflows I use for development, system administration, and daily operations on Linux.</p>\n",
+    "jsonData": {
+      "Version Control": [
+        {
+          "name": "Git",
+          "description": "A distributed version control system for tracking code changes and collaborating with others.",
+          "link": "https://git-scm.com/"
+        }
+      ],
+      "Containerization": [
+        {
+          "name": "Docker",
+          "description": "A platform to build, run, and manage applications inside lightweight containers.",
+          "link": "https://www.docker.com/"
+        }
+      ],
+      "Editors & IDEs": [
+        {
+          "name": "Visual Studio Code",
+          "description": "A popular, lightweight code editor with support for debugging, Git, and extensions.",
+          "link": "https://code.visualstudio.com/"
+        }
+      ],
+      "API & Testing": [
+        {
+          "name": "Postman",
+          "description": "An API platform for building, testing, and using APIs efficiently.",
+          "link": "https://www.postman.com/"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "userscripts",
+    "title": "Userscripts",
+    "description": "<p>A collection of custom userscripts for browsers (via Violentmonkey/Greasemonkey) to enhance web browsing and automate tasks.</p>\n",
+    "jsonData": {
+      "Browser Automation": [
+        {
+          "name": "YouTube Playlist Saver",
+          "description": "A userscript that extracts video links from a playlist and exports them as a text file.",
+          "link": "https://greasyfork.org/en/scripts/12345-youtube-playlist-saver"
+        },
+        {
+          "name": "Dark Mode Enforcer",
+          "description": "A userscript that forces dark mode on websites that don’t support it natively.",
+          "link": "https://greasyfork.org/en/scripts/67890-dark-mode-enforcer"
+        }
+      ]
+    }
+  }
+]

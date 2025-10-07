@@ -1,11 +1,14 @@
 <!-- /var/www/html/wormpilled/src/lib/components/Webring.svelte -->
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import webringData from '$lib/data/webring.json';
+	import { getWidgetStyle } from '$lib/widgetStyler';
 
 	const siteName = 'wormpilled';
 	const currentIndex = webringData.findIndex((site) => site.name === siteName);
 
 	let prevSite, nextSite, randomSite;
+	let styleString = '';
 
 	if (currentIndex !== -1) {
 		prevSite = webringData[(currentIndex - 1 + webringData.length) % webringData.length];
@@ -18,9 +21,14 @@
 		} while (webringData.length > 1 && randomIndex === currentIndex);
 		randomSite = webringData[randomIndex];
 	}
+
+	onMount(() => {
+		const theme = document.documentElement.getAttribute('data-theme') || 'wormpilled';
+		styleString = getWidgetStyle('Webring', theme);
+	});
 </script>
 
-<div class="widget">
+<div class="widget" style={styleString}>
 	<p class="title">//WEB-RING</p>
 	{#if prevSite && nextSite && randomSite}
 		<p>
@@ -36,16 +44,18 @@
 <style>
 	.widget {
 		margin-bottom: 1.5rem;
+		background-color: var(--widget-background-color);
 	}
 	.title {
-		border-bottom: 1px solid var(--border);
+		border-bottom: var(--widget-title-border-bottom);
 		padding-bottom: 0.3em;
 		margin-bottom: 0.5rem;
-		color: var(--accent);
+		color: var(--widget-title-color);
 	}
 	p {
 		margin: 0;
 		display: flex;
 		justify-content: space-between;
+		color: var(--widget-paragraph-color);
 	}
 </style>

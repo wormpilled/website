@@ -15,6 +15,8 @@
 				url.hash = id;
 				try {
 					await navigator.clipboard.writeText(url.href);
+					// Manually update the URL in the address bar
+					window.history.pushState(null, '', url.hash);
 					target.classList.add('copied');
 					setTimeout(() => {
 						target.classList.remove('copied');
@@ -33,20 +35,66 @@
 </svelte:head>
 
 <article>
+	<a href="/standalone" class="back-link">&lt;-- Standalone</a>
 	<h1>{page.title}</h1>
-	<p class="meta">Last Updated: {new Date(page.date).toISOString().split('T')[0]}</p>
+	<div class="meta">
+		<div class="meta-left">
+			<span>Last Updated: {new Date(page.date).toISOString().split('T')[0]}</span>
+			{#if page.author}
+				<div class="author-info">
+					<img src={page.author.avatar} alt="{page.author.name}'s avatar" class="avatar" />
+					<div class="author-text">
+						<strong>{page.author.name}</strong>
+						<p>{page.author.shortBio}</p>
+					</div>
+				</div>
+			{/if}
+		</div>
+	</div>
 
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="content" on:click={handleContentClick}>
+	<div class="content" on:click={handleContentClick} role="group">
 		{@html page.htmlContent}
 	</div>
 </article>
 
 <style>
+	.back-link {
+		display: inline-block;
+		margin-bottom: 2rem;
+	}
 	.meta {
 		color: #888;
 		margin-bottom: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 1rem;
+		border-bottom: 1px dashed var(--border);
+		padding-bottom: 1rem;
+	}
+	.author-info {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.avatar {
+		width: 50px;
+		height: 50px;
+	}
+	.author-text {
+		font-size: 0.9em;
+	}
+	.author-text strong {
+		color: var(--foreground);
+		font-size: 1.1em;
+	}
+	.author-text p {
+		margin: 0;
+		color: #aaa;
 	}
 
 	.content :global(h1),

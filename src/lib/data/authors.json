@@ -1,0 +1,14 @@
+{
+  "joey": {
+    "name": "Joey",
+    "avatar": "/assets/avatar/joey.gif",
+    "shortBio": "WADDYA SAYYY!!!!",
+    "slug": "joey"
+  },
+  "wormpilled": {
+    "name": "wormpilled",
+    "avatar": "/assets/avatar/wormpilled.gif",
+    "shortBio": "A local-first brutalist entity.",
+    "slug": "wormpilled"
+  }
+}

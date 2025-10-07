@@ -1,0 +1,118 @@
+[
+	{
+		"id": "posts",
+		"type": "link",
+		"url": "/posts",
+		"category": "CONTENT",
+		"text": "POSTS",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "data",
+		"type": "link",
+		"url": "/data",
+		"category": "CONTENT",
+		"text": "DATA",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "standalone",
+		"type": "link",
+		"url": "/standalone",
+		"category": "CONTENT",
+		"text": "STANDALONE",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "authors",
+		"type": "link",
+		"url": "/authors",
+		"category": "CONTENT",
+		"text": "AUTHORS",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "saved",
+		"type": "button",
+		"action": "open_saved_modal",
+		"category": "CONTENT",
+		"text": "♥",
+		"isDynamic": true,
+		"showInSimpleNav": false,
+		"style": {
+			"fontSize": 14,
+			"textColor": "#f0f0f0",
+			"borderColor": "#ff79c6",
+			"backgroundColor": "#2d2a41",
+			"animatedBorder": true
+		}
+	},
+	{
+		"id": "find",
+		"type": "link",
+		"url": "/find",
+		"category": "SYSTEM",
+		"text": "FIND",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "plan",
+		"type": "button",
+		"action": "open_plan_modal",
+		"category": "SYSTEM",
+		"text": ".PLAN",
+		"isDynamic": true,
+		"showInSimpleNav": false,
+		"style": {
+			"textColor": "#FFFFFF",
+			"backgroundColor": "#0000AA",
+			"borderColor": "#FFFFFF",
+			"textBlink": true,
+			"blinkDuration": "1.5s"
+		}
+	},
+	{
+		"id": "config",
+		"type": "button",
+		"action": "open_config_modal",
+		"category": "SYSTEM",
+		"text": "CONFIG",
+		"isDynamic": false,
+		"showInSimpleNav": true
+	},
+	{
+		"id": "contact",
+		"type": "link",
+		"url": "/contact",
+		"category": "EXTERNAL",
+		"text": "CONTACT",
+		"isDynamic": true,
+		"showInSimpleNav": false,
+		"style": {
+			"backgroundImage": "/assets/button-bg/bg_blue.gif",
+			"textColor": "#FFFFFF",
+			"animatedBorder": true,
+			"borderColor": "#FFFFFF"
+		}
+	},
+	{
+		"id": "stats",
+		"type": "button",
+		"action": "open_stats_modal",
+		"category": "EXTERNAL",
+		"text": "STATS",
+		"isDynamic": true,
+		"showInSimpleNav": false,
+		"style": {
+			"textColor": "#f0f0f0",
+			"borderColor": "#87cefa",
+			"backgroundColor": "#2d2a41",
+			"animatedBorder": true
+		}
+	}
+]
